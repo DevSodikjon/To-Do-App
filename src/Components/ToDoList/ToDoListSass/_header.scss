@@ -1,0 +1,117 @@
+.header {
+  background: $Blue-color;
+  &_items {
+    padding: 30px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &_burger {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: #fff;
+
+      i {
+        font-size: 35px;
+      }
+
+      h2 {
+        font-weight: 600;
+        font-size: 40px;
+        line-height: 40px;
+        text-transform: capitalize;
+      }
+    }
+
+    &_login {
+      a {
+        font-weight: 600;
+        font-size: 40px;
+        line-height: 40px;
+        text-decoration: none;
+        color: #fff;
+      }
+
+      a:hover {
+        color: $Grey-color;
+        transition: all 0.2s ease-in-out;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $tabled) {
+  .header {
+    &_items {
+      padding: 25px 0px !important;
+      &_burger {
+        i {
+          font-size: 30px !important;
+        }
+
+        h2 {
+          font-size: 33px;
+          line-height: 35px;
+        }
+      }
+
+      &_login {
+        a {
+          font-size: 33px;
+          line-height: 35px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $tabledSmall) {
+  .header {
+    &_items {
+      padding: 25px 0px !important;
+      &_burger {
+        i {
+          font-size: 26px !important;
+        }
+
+        h2 {
+          font-size: 28px;
+          line-height: 30px;
+        }
+      }
+
+      &_login {
+        a {
+          font-size: 28px;
+          line-height: 30px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $mobile) {
+  .header {
+    &_items {
+      padding: 20px 0px !important;
+      &_burger {
+        i {
+          font-size: 20px !important;
+        }
+
+        h2 {
+          font-size: 20px;
+          line-height: 20px;
+        }
+      }
+
+      &_login {
+        a {
+          font-size: 20px;
+          line-height: 20px;
+        }
+      }
+    }
+  }
+}

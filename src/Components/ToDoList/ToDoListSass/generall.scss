@@ -1,0 +1,30 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 1300px;
+  padding: 0px 15px;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: $tabled) {
+  .container {
+    max-width: 972px;
+    padding: 0px 10px;
+  }
+}
+@media screen and (max-width: $tabledSmall) {
+  .container {
+    max-width: 748px;
+    padding: 0px 10px;
+  }
+}
+@media screen and (max-width: $mobile) {
+  .container {
+    max-width: 566px;
+    padding: 0px 5px;
+  }
+}

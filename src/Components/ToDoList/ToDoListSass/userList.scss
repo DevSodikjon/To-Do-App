@@ -1,0 +1,395 @@
+.userList {
+  position: relative;
+  &_items {
+    &_title {
+      margin-top: 50px;
+      h3 {
+        text-align: center;
+        font-size: 55px;
+        line-height: 70px;
+        text-transform: capitalize;
+      }
+    }
+
+    &_addUserBtn {
+      margin: 25px 0px 50px 0px;
+      button {
+        color: #ffffff;
+        padding: 15px 30px;
+        border: none;
+        border-radius: 12px;
+        background: $Blue-color;
+        font-weight: 600;
+        font-size: 25px;
+      }
+
+      button:hover {
+        cursor: pointer;
+        color: $Blue-color;
+        background: $Grey-color;
+        transition: all 0.3s ease-in-out;
+      }
+    }
+
+    &_table {
+      padding-bottom: 50px;
+      table {
+        border-collapse: collapse;
+        width: 100%;
+        tr {
+          th {
+            color: $Grey-color;
+            text-align: left;
+            padding: 8px;
+            border-bottom: 1px solid #ddd;
+          }
+          td {
+            text-align: left;
+            padding: 8px;
+            border-bottom: 1px solid #ddd;
+            color: #4e4f56;
+            font-weight: 500;
+            font-size: 20px;
+
+            i {
+              font-size: 30px;
+              color: #000000;
+            }
+
+            i:hover {
+              cursor: pointer;
+            }
+            .edit:hover {
+              color: green;
+              transition: all 0.2s ease-in-out;
+            }
+            .delete:hover {
+              color: red;
+              transition: all 0.2s ease-in-out;
+            }
+          }
+        }
+
+        tr:hover {
+          background-color: #f5f5f5;
+        }
+      }
+    }
+  }
+
+  .modal {
+    width: 100%;
+    padding: 100px 0px 72px 0px;
+    background: #1010109a;
+    top: -153px;
+
+    position: absolute;
+
+    transition: all 0.6s ease-in-out;
+    .modal_card {
+      width: 100%;
+      margin: 0 auto;
+      width: 40%;
+      background-color: #ddd;
+      border-radius: 15px;
+
+      i {
+        padding: 5px;
+        float: right;
+        color: $Blue-color;
+        font-size: 40px;
+      }
+
+      i:hover {
+        cursor: pointer;
+        color: red;
+        transform: rotate(180deg);
+        transition: all 0.2s ease-in-out;
+      }
+
+      form {
+        text-align: center;
+        padding: 28px 15px;
+
+        h4 {
+          font-size: 35px;
+          margin-bottom: 18px;
+          color: $Blue-color;
+        }
+
+        .inputDiv {
+          padding: 10px;
+          input {
+            width: 100%;
+            padding: 20px 10px;
+            border: none;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 20px;
+          }
+        }
+
+        .buttonDiv {
+          margin-top: 25px;
+          button {
+            font-size: 23px;
+            font-weight: 600;
+            color: #ffffff;
+            padding: 15px 45px;
+            background: $Blue-color;
+            border: none;
+            border-radius: 12px;
+          }
+
+          button:hover {
+            cursor: pointer;
+            color: $Blue-color;
+            background: $Grey-color;
+            transition: all 0.2s ease-out;
+          }
+        }
+      }
+    }
+  }
+
+  .active {
+    transition: all 0.6s ease-in-out;
+    top: -950px;
+  }
+}
+
+@media screen and (max-width: $tabled) {
+  .userList {
+    &_items {
+      &_title {
+        margin-top: 30px;
+        h3 {
+          font-size: 45px;
+          line-height: 50px;
+        }
+      }
+
+      &_addUserBtn {
+        margin: 5px 0px 30px 0px;
+        button {
+          padding: 10px 20px;
+          font-weight: 500;
+          font-size: 20px;
+        }
+      }
+
+      &_table {
+        padding-bottom: 30px;
+        table {
+          tr {
+            th {
+              padding: 8px;
+              border-bottom: 1px solid #ddd;
+            }
+            td {
+              padding: 8px;
+              font-weight: 500;
+              font-size: 20px;
+
+              i {
+                font-size: 30px;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .modal {
+      .modal_card {
+        width: 55%;
+
+        i {
+          font-size: 35px;
+        }
+
+        form {
+          text-align: center;
+          padding: 28px 15px;
+
+          h4 {
+            font-size: 30px;
+          }
+
+          .inputDiv {
+            padding: 5px;
+            input {
+              padding: 20px 10px;
+            }
+          }
+
+          .buttonDiv {
+            margin-top: 20px;
+            button {
+              font-size: 20px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $tabledSmall) {
+  .userList {
+    &_items {
+      &_title {
+        margin-top: 25px;
+        h3 {
+          font-size: 40px;
+          line-height: 45px;
+        }
+      }
+
+      &_addUserBtn {
+        margin: 5px 0px 25px 0px;
+        button {
+          padding: 10px 20px;
+          font-weight: 500;
+          font-size: 15px;
+        }
+      }
+
+      &_table {
+        padding-bottom: 30px;
+        table {
+          tr {
+            th {
+              padding: 0px;
+              border-bottom: 1px solid #ddd;
+            }
+            td {
+              padding: 8px;
+              font-weight: 500;
+              font-size: 16px;
+
+              i {
+                font-size: 22px;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .modal {
+      .modal_card {
+        width: 55%;
+
+        i {
+          font-size: 35px;
+        }
+
+        form {
+          text-align: center;
+          padding: 28px 15px;
+
+          h4 {
+            font-size: 30px;
+          }
+
+          .inputDiv {
+            padding: 5px;
+            input {
+              padding: 20px 10px;
+            }
+          }
+
+          .buttonDiv {
+            margin-top: 20px;
+            button {
+              font-size: 20px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $mobile) {
+  .userList {
+    &_items {
+      &_title {
+        margin-top: 10px;
+        h3 {
+          font-size: 25px;
+          line-height: 30px;
+        }
+      }
+
+      &_addUserBtn {
+        margin: 10px 0px 25px 0px;
+        text-align: center;
+        button {
+          padding: 10px 20px;
+          font-weight: 500;
+          font-size: 15px;
+        }
+      }
+
+      &_table {
+        padding-bottom: 30px;
+        table {
+          tr {
+            th {
+              padding: 0px;
+              border-bottom: 1px solid #ddd;
+              padding: 8px;
+              font-weight: 500;
+              font-size: 10px;
+            }
+            td {
+              padding: 4px;
+              font-weight: 500;
+              font-size: 10px;
+
+              i {
+                font-size: 20px;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .modal {
+      .modal_card {
+        width: 90%;
+
+        i {
+          font-size: 30px;
+        }
+
+        form {
+          padding: 36px 11px;
+
+          h4 {
+            font-size: 25px;
+          }
+
+          .inputDiv {
+            padding: 15px;
+            input {
+              padding: 15px 10px;
+              font-weight: 500;
+              font-size: 15px;
+            }
+          }
+
+          .buttonDiv {
+            margin-top: 20px;
+            button {
+              font-size: 16px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
