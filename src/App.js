@@ -1,12 +1,18 @@
-// import Cities from "./Components/Cities/Cities";
-// import Lang from "./Components/language/Lang";
-import ToDoList from "./Components/ToDoList/ToDoList";
+import Home from "./CountryRouter/home/Home";
+import "./App.css";
+import { Routes, Route } from "react-router";
+import SingleArticle from "./CountryRouter/single-article/SingleArticle";
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <ToDoList />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="news/:id" element={<SingleArticle />} />
+        </Routes>
+        {/* <SingleArticle /> */}
+        {/* <Home /> */}
       </header>
     </div>
   );

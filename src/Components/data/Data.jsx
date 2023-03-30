@@ -1,16 +1,17 @@
 import React, { useEffect, useState } from "react";
-import "../Cities/Cities.scss";
 import axios from "axios";
-
-const Cities = () => {
+import "./Data.scss";
+const Data = () => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
+  const [text, setText] = useState("posts");
 
   const fetchData = async () => {
     try {
-      const res = await axios.get("https://restcountries.com/v3.1/all");
-      console.log(res);
+      const res = await axios.get(
+        `https://jsonplaceholder.typicode.com/${text}`
+      );
       setData(res.data);
       setLoading(false);
     } catch (error) {
@@ -22,7 +23,7 @@ const Cities = () => {
   useEffect(() => {
     setLoading(true);
     fetchData();
-  }, []);
+  }, [text]);
 
   if (loading) {
     return <div className="Loading">Loading...</div>;
@@ -40,28 +41,35 @@ const Cities = () => {
           <form>
             <input type="text" placeholder="Search ..." />
           </form>
+
+          <div className="btns">
+            <button onClick={() => setText("posts")}>Posts</button>
+            <button onClick={() => setText("users")}>Users</button>
+            <button onClick={() => setText("comments")}>Comments</button>
+          </div>
         </div>
 
         <div className="card-group">
           {data.map((el) => (
             <div className="card" key={el.id}>
               <div className="card_items">
-                <div className="card-img">
+                {/* <div className="card-img">
                   <img src={el.flags.png} alt="" />
-                </div>
+                </div> */}
 
                 <div className="card-content">
                   <h3></h3>
                   <p>
-                    <span>Cauntry: </span>
-                    {el.name.common}
+                    <span>Id: </span>
+                    {el.userId}
                   </p>
                   <p>
-                    <span>Capital: </span>
-                    {el.capital}
+                    <span>Title: </span> <br />
+                    {el.title}
                   </p>
                   <p>
-                    <span>Currency: </span>
+                    <span>Description: </span> <br />
+                    {el.body}
                   </p>
                 </div>
               </div>
@@ -73,4 +81,4 @@ const Cities = () => {
   );
 };
 
-export default Cities;
+export default Data;

@@ -1,8 +1,11 @@
 import React from "react";
 import { useState } from "react";
 // import { useRef } from "react";
+import { useTranslation } from "react-i18next";
 
 const UserList = () => {
+  const { t, i18n } = useTranslation();
+
   const [active, setActive] = useState(false);
 
   const [todo, setTodos] = useState(() => {
@@ -146,7 +149,7 @@ const UserList = () => {
         <div className="container">
           <div className="userList_items">
             <div className="userList_items_title">
-              <h3>user details</h3>
+              <h3>{t("to-do")}</h3>
             </div>
             <div className="userList_items_addUserBtn">
               <button onClick={modal}>ADD USER</button>
